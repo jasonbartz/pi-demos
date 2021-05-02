@@ -42,11 +42,12 @@ def read_temp():
         temp_string = lines[1][equals_pos+2:]
         return float(temp_string) / 1000.0
 
-
-def write_display(text):
-    # Clear the display.
+def clear():
     display.fill(0)
 
+
+def write_display(text):
+    clear()
     # set brightness, range 0-1.0, 1.0 max brightness
     display.brightness = 1
 
@@ -55,7 +56,6 @@ def write_display(text):
 print('Press Ctrl-C to quit.')
 while True:
     temp = read_temp()
-    display.clear()
     temp_in_f = int(c_to_f(temp))
     write_display("{} F".format(temp_in_f))
     time.sleep(5)
