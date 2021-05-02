@@ -50,7 +50,7 @@ def write_display(text):
 
     display.print(text)
 
-print 'Press Ctrl-C to quit.'
+print('Press Ctrl-C to quit.')
 while True:
     temp = read_temp()
     display.clear()
